@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:object="${authRequest}">
+    email: <input name="username" />
+    password: <input name="password" type="password" />
+    <input type="submit" />
+    <br />
+    <span th:errors="*{username}" th:if="${#fields.hasErrors('username')}">Email Error</span>
+    <span th:errors="*{password}" th:if="${#fields.hasErrors('password')}">Password Error</span>
+</form>
+</body>
+</html>
